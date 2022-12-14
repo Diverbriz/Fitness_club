@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+    <item android:id="@+id/menu_season_ticket"
+        android:icon="@drawable/ic_baseline_card_giftcard_24"
+        android:title="Ticket" />
+    <item android:id="@+id/menu_checklist"
+        android:icon="@drawable/ic_baseline_playlist_add_check_24"
+        android:title="CheckList" />
+    <item android:id="@+id/menu_account"
+        android:icon="@drawable/ic_baseline_supervisor_account_24"
+        android:title="Account" />
+</menu>

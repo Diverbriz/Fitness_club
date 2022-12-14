@@ -13,18 +13,27 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
+
 import it.ikbo1120.fitness_club_v1_1.MainActivity;
+import it.ikbo1120.fitness_club_v1_1.R;
+import it.ikbo1120.fitness_club_v1_1.ServiceLocator;
 import it.ikbo1120.fitness_club_v1_1.databinding.ServicesItemBinding;
 import it.ikbo1120.fitness_club_v1_1.domain.model.Services;
+import it.ikbo1120.fitness_club_v1_1.domain.repository.mock.MockBase;
 
 import java.util.List;
 
 public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemViewHolder> {
-    private List<Services> data;
-    final int DIALOG_EXIT = 1;
-    public ItemListAdapter(List<Services> data) {
-        this.data = data;
 
+    private List<Services> data;
+    private MainActivity mainActivity;
+
+    final int DIALOG_EXIT = 1;
+    public ItemListAdapter(List<Services> data, MainActivity mActivity) {
+        this.data = data;
+        this.mainActivity = mActivity;
     }
 
     @NonNull
@@ -36,14 +45,24 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemVi
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        Picasso.with(mainActivity)
+                .load(data.get(position).getUrl())
+                .into(holder.binding.cardImageView);
         holder.binding.itemCard.setOnClickListener(v -> {
             System.out.println(position);
+
         });
+        if(data.get(position).getName_services() != null){
+            holder.binding.itemName.setText(data.get(position).getName_services());
+        }
+        if(data.get(position).getPrice_services() != null){
+            holder.binding.itemPrice.setText(data.get(position).getPrice_services().toString());
+        }
         holder.binding.itemCard.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                data.remove(position);
-                return false;
+                ServiceLocator.getInstance().getRepository(mainActivity.getApplication()).deleteService(data.get(position));
+                return true;
             }
         });
     }
@@ -68,5 +87,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemVi
             super(binding.getRoot());
             this.binding = binding;
         }
+
     }
 }

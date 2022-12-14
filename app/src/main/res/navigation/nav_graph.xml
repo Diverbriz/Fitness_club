@@ -15,4 +15,14 @@
         android:name="it.ikbo1120.fitness_club_v1_1.presentation.view.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" /><action android:id="@+id/action_global_registrationFragment" app:destination="@id/registrationFragment"/><action android:id="@+id/action_global_homeFragment" app:destination="@id/homeFragment"/>
+    <fragment
+        android:id="@+id/checkListFragment"
+        android:name="it.ikbo1120.fitness_club_v1_1.presentation.view.CheckListFragment"
+        android:label="fragment_check_list"
+        tools:layout="@layout/fragment_check_list" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="it.ikbo1120.fitness_club_v1_1.presentation.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" /><action android:id="@+id/action_global_checkListFragment" app:destination="@id/checkListFragment"/><action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment"/>
 </navigation>
