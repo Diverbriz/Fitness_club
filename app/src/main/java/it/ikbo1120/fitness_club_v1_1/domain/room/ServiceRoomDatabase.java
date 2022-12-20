@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 
 import it.ikbo1120.fitness_club_v1_1.domain.model.Services;
 
-@Database(entities = {Services.class}, version = 1)
+@Database(entities = {Services.class}, version = 2)
 public abstract class ServiceRoomDatabase extends RoomDatabase{
     public abstract ServicesMethods serviceDao();
 
@@ -27,6 +27,7 @@ public abstract class ServiceRoomDatabase extends RoomDatabase{
                 if(INSTANCE == null){
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             ServiceRoomDatabase.class, "fitness_club_db")
+
                             .build();
                 }
             }

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Fitness_club_v1_1</string>
     <string name="hello_igor">Привет, Игорь</string>
+    <string name="add_fab">Добавить группу</string>
+    <string name="add_event_title">Добавление группы</string>
+    <string name="add_event_start">Начало группы</string>
+    <string name="add_event_end">Конец группы</string>
 </resources>

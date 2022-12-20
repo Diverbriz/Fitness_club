@@ -25,4 +25,19 @@
         android:name="it.ikbo1120.fitness_club_v1_1.presentation.view.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" /><action android:id="@+id/action_global_checkListFragment" app:destination="@id/checkListFragment"/><action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment"/>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="it.ikbo1120.fitness_club_v1_1.presentation.view.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" >
+        <action
+            android:id="@+id/action_calendarFragment_to_addEventFragment"
+            app:destination="@id/addEventFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_calendarFragment" app:destination="@id/calendarFragment" />
+    <fragment
+        android:id="@+id/addEventFragment"
+        android:name="it.ikbo1120.fitness_club_v1_1.presentation.view.AddEventFragment"
+        android:label="fragment_add_event"
+        tools:layout="@layout/fragment_add_event" />
 </navigation>

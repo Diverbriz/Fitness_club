@@ -59,7 +59,12 @@ public class HomeFragment extends Fragment {
                     binding.servicesList.setAdapter(new ItemListAdapter(item, (MainActivity) requireActivity()));
                 });
 
-
+        binding.fab.setOnClickListener(v->{
+            Services services1 = new Services("Gym", "Какой-то зал", 1200f,
+                    "https://p0.zoon.ru/9/f/58e293c440c0886e708de9c0_5d51d93045293.jpg");
+            ServiceLocator.getInstance().getRepository(requireActivity().getApplication())
+                    .createService(services1);
+        });
 
 
 

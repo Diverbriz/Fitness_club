@@ -5,12 +5,19 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class Services {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private Long id_services;
     private String name_services;
     private String description_services;
     private Float price_services;
     private String url;
+
+    public Services(String name_services, String description_services, Float price_services, String url) {
+        this.name_services = name_services;
+        this.description_services = description_services;
+        this.price_services = price_services;
+        this.url = url;
+    }
 
     public Services(Long id_services, String name_services, String description_services, Float price_services, String url) {
         this.id_services = id_services;

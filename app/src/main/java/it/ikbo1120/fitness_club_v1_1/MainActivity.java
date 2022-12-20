@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
                                 .navigate(R.id.action_global_profileFragment);
                         return true;
                     case R.id.menu_season_ticket:
+                        Navigation.findNavController(mBinding.navHostFragment)
+                                .navigate(R.id.action_global_calendarFragment);
                         return true;
 //                    default:
 //                        Navigation.findNavController(mBinding.navHostFragment)
